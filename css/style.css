@@ -1,0 +1,351 @@
+body {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #FFF;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Caveat', Arial, Helvetica, sans-serif;
+    font-size: 4.5em;
+    color: #69a5e6;
+    margin: 15px;
+    margin-right: 100px;
+}
+
+h2 {
+    font-family: 'Caveat', Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    color: #69a5e6;
+}
+
+h3 {
+    color: #69a5e6;
+    text-decoration: underline;
+}
+
+p, a, button, label {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #69a5e6;
+}
+
+p {
+    line-height: 1.5;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 50px 0 50px 0;
+}
+
+button {
+    display: inline-block;
+    padding: 0.7em 1em;
+    border-radius: 20px;
+    color: #69a5e6;
+    font-size: 15px;
+    font-weight: 500;
+    background-image: linear-gradient( rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(217, 217, 217, 1) 100%);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+button:disabled {
+    color: black;
+    background-color: lightgrey;
+    background-image: none;
+}
+
+button:active {
+    -ms-transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 30px 0 30px 0;
+}
+
+.title {
+    display: inline-flex;
+    align-items: center;
+}
+
+header img {
+    height: 75px;
+}
+
+/* SECTION SLIDER */
+
+#slider img {
+    max-width: 90%;
+    max-height: 600px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px black;
+}
+
+#section-slider {
+    height: 600px;
+}
+
+#slider {
+    position: relative;
+    height: auto;
+    max-height: 600px;
+}
+
+.slide {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index: 0;
+    transition: 1000ms;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 1;
+}
+
+#slider-btns {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -575px;
+    z-index: 2;
+}
+
+.slider-btn {
+    background-color: rgba(105, 165, 230, 0.8);
+    padding: 15px;
+    border-radius: 50%;
+    color: #FFF;
+    margin: 0px 10px 0px 10px;
+    width: 15px;
+    cursor: pointer;
+    transform: scale(1);
+    box-shadow: 0px 5px 5px rgba(78, 124, 173, 0.8);
+}
+
+.slider-btn:active {
+    transform: scale(0.95);
+}
+
+#slider-replacement {
+    display: none;
+}
+
+/* CARTE + RESERVATION */
+
+#carte-reservation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#carte {
+    height: 550px;
+    width: 50%;
+    border-radius: 10px;
+    z-index: 0;
+    box-shadow: 0px 5px 10px black;
+}
+
+#reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #69a5e6;
+    width: 30%;
+    height: 550px;
+    box-shadow: 0px 5px 10px black;
+}
+
+#obligatoire {
+    margin: 0;
+}
+
+#reservation p, label {
+    color: white;
+    font-weight: 400;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 10px;
+}
+
+#h3-reservation {
+    font-family: 'Caveat', Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    margin: 5px 0 0 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-75%);
+    text-decoration: underline;
+    color: #FFF;
+}
+
+#reservation-btn {
+    margin-top: 20px;
+}
+
+#display-station {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.canvas-div p {
+    margin-bottom: -15px;
+}
+
+#canvas {
+    margin: 20px 0 20px 0;
+    background-color: white;
+    border: 1px solid black;
+    cursor: crosshair;
+    position: relative;
+}
+
+#canvas-btns {
+    display: inline;
+}
+
+#cancel-btn {
+    margin-top: 30px;
+}
+
+/* DISPLAYING TIMER AFTER RESERVATION */
+
+#timer-div {
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+/* FOOTER */
+
+footer {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* MEDIA QUERIES TABLETTES */
+
+@media all and (max-device-width: 1024px) {
+    h1 {
+        margin: 15px 0 0 0;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    #section-slider {
+        height: 550px;
+    }
+    #slider-btns {
+        position: absolute;
+        bottom: -500px;
+    }
+    #carte-reservation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #carte {
+        width: 90%;
+        height: 400px;
+        margin-bottom: 25px;
+    }
+    #reservation {
+        width: 90%;
+        height: 550px;
+    }
+}
+
+@media all and (max-device-width: 768px) {
+    #section-slider {
+        height: 400px;
+    }
+    #slider-btns {
+        position: absolute;
+        bottom: -370px;
+    }
+}
+
+/* TELEPHONES */
+
+@media all and (min-device-width: 320px) and (max-device-width: 600px) {
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 1.25em;
+    }
+    hr {
+        margin: 30px 0 30px 0;
+    }
+    header img {
+        height: 50px;
+        margin-right: 10px;
+    }
+    #section-slider {
+        height: auto;
+        width: 90%;
+        margin: 0 auto;
+    }
+    #slider {
+        display: none;
+    }
+    #slider-replacement {
+        display: initial;
+    }
+    #carte {
+        width: 80%;
+    }
+    #reservation {
+        width: 100%;
+        height: 550px;
+    }
+}

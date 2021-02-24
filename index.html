@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reservélov - Réservation de vélo'v en ligne</title>
+    <meta name="description"
+        content="Reservélo'v est une appli qui vous permet de réserver votre vélo'v en ligne en deux minutes. Vous ne vous retrouverez plus devant une station sans vélo'v !">
+    <link rel="icon" href="./images/logo.png">
+
+    <!-- fichier css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- font awesome  -->
+    <script src="https://kit.fontawesome.com/fe239d901e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <img src="./images/logo.png" alt="Logo">
+            <a href="http://projet3.charleshopfner.fr">
+                <h1>Réservélo'v</h1>
+            </a>
+        </div>
+        <div>
+            <h2>L'appli n°1 pour réserver ton vélo'v en ligne !</h2>
+        </div>
+    </header>
+    <hr>
+    <section id="section-slider">
+        <div id="slider">
+            <img class="slide showing" src="./images/slider/slide1.jpg"
+                alt="Réservez votre vélo'v directement en ligne grâce à cette application">
+            <img class="slide" src="./images/slider/slide2.jpg"
+                alt="Repérez la station de votre choix sur la carte ci-dessous">
+            <img class="slide" src="./images/slider/slide3.jpg"
+                alt="Cliquez sur son marqueur pour vérifier la disponibilité des vélo'v">
+            <img class="slide" src="./images/slider/slide4.jpg" alt="Le vélo vous est réservé pendant vingt minutes">
+            <div id="slider-btns">
+                <i id="previous" class="slider-btn fas fa-angle-left"></i>
+                <i id="play" class="slider-btn fas fa-play"></i>
+                <i id="pause" class="slider-btn fas fa-pause"></i>
+                <i id="next" class="slider-btn fas fa-angle-right"></i>
+            </div>
+        </div>
+        <div id="slider-replacement">
+            <p>Ne vous retrouvez plus devant une station sans vélo'v disponible ! Grâce à cette application, vous pouvez
+                réserver votre vélo'v directement en ligne dans la station de votre choix.</p>
+            <p>Repérez la station de votre choix sur la carte ci-dessous. <br> Cliquez sur son marqueur pour vérifier le
+                nombre de vélo'v disponibles !</p>
+            <p>Une fois votre station repérée, remplissez le formulaire ci-dessous et validez vore réservation en
+                signant.</p>
+            <p>Lorsque la réservation est validée, le vélo'v vous est réservé pendant 20 minutes avant de redevenir
+                disponible pour d'autres utilisateurs. <br> Ne tardez pas à le récupérer !</p>
+        </div>
+    </section>
+    <hr>
+    <section id="carte-reservation">
+        <div id="carte"></div>
+        <div id="reservation">
+            <h3 id="h3-reservation">Cliquez sur une station !</h3>
+            <div id="reservation-content">
+                <div>
+                    <div id="display-station">
+                    </div>
+                    <div id="user-info" class="hidden">
+                        <label for="name">Votre nom* : <input type="text" id="name"></label>
+                        <label for="forename">Votre prénom* : <input type="text" id="forename"></label>
+                        <p id="obligatoire"><small>* : Champs obligatoires.</small></p>
+                        <button id="reservation-btn" disabled>Réservez votre vélo</button>
+                    </div>
+                </div>
+                <div id="canvas-div" class="hidden">
+                    <p>Veuillez signer ci-dessous</p>
+                    <canvas id="canvas"></canvas>
+                    <div id="canvas-btns">
+                        <button id="clear-canvas">Effacer</button>
+                        <button id="validation-btn" disabled>Validez votre réservation</button>
+                    </div>
+                </div>
+                <button id="cancel-btn" class="hidden">Annulez votre réservation</button>
+            </div>
+        </div>
+    </section>
+    <section id="timer-div">
+        <p id="timer"></p>
+    </section>
+    <hr>
+    <footer>
+        <p>created by Charles Hopfner - 2019</p>
+        <p><a href="mentions.html">Mentions légales</a></p>
+    </footer>
+
+    <!-- Leaflet js -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <!-- fichiers js -->
+    <script src="./js/slider.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/canvas.js"></script>
+    <script src="./js/timer.js"></script>
+    <script src="./js/enable.js"></script>
+
+</body>
+
+</html>
